@@ -1,11 +1,10 @@
+
 <?php
 /**
  * Tirada dados - tirada-dados-1.php
  *
- * @author Francisco
+ * @author Florindo López Delgado
  */
-
-print "<!-- Ejercicio incompleto -->\n";
 
 ?>
 <!DOCTYPE html>
@@ -23,48 +22,25 @@ print "<!-- Ejercicio incompleto -->\n";
 
 <body>
   <h1>Tirada de dados</h1>
-  
-
-          
-          
-
 <?php
 
-$dado1=rand(1,6);
-$dado2=rand(1,6);
-$dado3=rand(1,6);
-
-
-
-//suma
-$suma= $dado1 + $dado2 + $dado3;
-echo 'Valor Total conseguido: '.$suma;
-
-
-
-/////////////
+ $dados1 = rand(1, 6);
+ $dados2 = rand(1, 6);
+ $dados3 = rand(1, 6);
 
 ?>
-
-
 <p>
-            <img src="img/<?php echo $dado1;?>.svg"  width="140" height="140">
-            <img src="img/<?php echo $dado2;?>.svg"  width="140" height="140">
-            <img src="img/<?php echo $dado3;?>.svg"  width="140" height="140"> 
-           
-          </p> 
+  <img src="<?php echo "img/".$dados1.".svg"; ?>" alt="4" width="140" height="140">
+  <img src="<?php echo "img/".$dados2.".svg"; ?>" alt="1" width="140" height="140">
+  <img src="<?php echo "img/".$dados3.".svg"; ?>" alt="2" width="140" height="140">
+</p>
+<p>Valor Total conseguido: <?php echo $dados1 + $dados2 + $dados3; ?></p>
+<p>
+  <a href="tirada-dados-1.php">Volver a tirar</a>
+</p>
 
-
-
-
-<br>
-<p>Valor Total conseguido: </p>
-
-<?php echo $suma; ?>
-<br>
-          <p><a href="tirada-dados-1.php">Volver a tirar</a></p>
 <footer>
-  <p>Fran</p>
+  <p>Florindo López Delgado</p>
 </footer>
 </body>
 </html>

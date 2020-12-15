@@ -2,7 +2,7 @@
 /**
  * Descarta palo - descarta-palo-2.php
  *
- * @author Escriba aquí su nombre
+ * @author Florindo López Delgado
  */
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
   <title>
     Descarta palo (Resultado).
     Con formularios.
-    Escriba aquí su nombre
+    Florindo López Delgado
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" title="Color">
@@ -23,60 +23,84 @@
 
 <?php
 
+$errores = [];
+if(isset($_POST['mostrar'])){
+  if(isset($_POST['cantidad']) && ($_POST['cantidad'] < 2 || $_POST['cantidad'] > 12)){
+    $errores['cantidad'] = "El número de cartas indicado no está en el rango permitido";
+  }
 
-
-
-
-
-$errores[]{
-
-      if isset($_POST) {
-                echo "hay algun error";
-      }
+  if(isset($_POST['palo']) && $_POST['palo'] == ""){
+    $errores['palo'] = "Debe seleccionar un palo";
+  }
 }
 
-$carta=rand(1,10);
+if(count($errores) > 0){
+  foreach ($errores as $key => $value) {
+    echo  "<p class='aviso'>".$value."</p>";
+  }
+}
 
+if(isset($_POST['mostrar']) && count($errores) == 0){
 
-//descarta palo
+  $palo       = $_POST['palo'];
+  $cantidad   = $_POST['cantidad'];
 
+  $palos      = ["c","d","p","t"];
 
+  $palosNombres = [];
+  $palosNombres["c"] = "Corazones";
+  $palosNombres["d"] = "Diamantes";
+  $palosNombres["p"] = "Picas";
+  $palosNombres["t"] = "Trébol";
 
+  $descartes  = [];
+?>
+  <h2><?php echo $cantidad; ?> cartas</h2>
 
-if ($_POST["cantidad"] <2;
-      echo "el numero indicado de cartas no esta den el rango permitido";
-      else {
-          if ($_POST["cantidad"] >12;
-          echo "el numero indicado de cartas no esta den el rango permitido";
+  <p>
+    <?php
+      for ($i = 1; $i <= $cantidad; $i++) {
+        $palosacado = $palos[rand(0,3)];
+        $cartasacada = rand(1,10);
+
+        echo '<img src="img/'.$palosacado.$cartasacada.'.svg" alt="8" width="100">';
+
+        if($palosacado != $palo){
+          $descartes[] = $palosacado.$cartasacada;
         }
       }
-}
+    ?>
+  </p>
 
-if ($_POST["palo"]) == ""  {
-  echo "no ha elegido el palo";
-}
+  <h2>Resultado</h2>
+  <?php if(count($descartes) > 0){
+  ?>
+    <p>Hay <?php echo count($descartes); ?> cartas que no son
+    <?php
+        echo $palosNombres[$palo];
+    ?>.</p>
 
+    <p>
+      <?php
+        foreach ($descartes as $key => $value) {
+          echo '<img src="img/'.$value.'.svg" alt="8" width="100">';
+        }
+      ?>
+    </p>
+  <?php   
+  }else{
+  ?>
+    No hay cartas que no sean <?php echo $palosNombres[$palo]; ?>.</p>
+  <?php   
+  }
+  ?>
+<?php
+}
 ?>
   <p><a href="descarta-palo-1.php">Volver al formulario.</a></p>
 
-  
-  <?php
-
-  //descarta palo2
-
-if ($_POST["cantidad"]){
-  echo "no ha escrito el numero de cartas como numero entero";
-}
-
-if ($_POST["palo"])==" " {
-echo "el palo indicado no es uno de los permitidos";
-}
-?>
-<p>
-            <img src="img/c<?php echo $carta;?>.svg">
-
   <footer>
-    <p>Escriba aquí su nombre</p>
+    <p>Florindo López Delgado</p>
   </footer>
 </body>
 </html>
