@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-    Descarta palo (Formulario).
+    Descarta palo d(Formulario).
     Con formularios.
     Escriba aquí su nombre
   </title>
