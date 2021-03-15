@@ -2,7 +2,7 @@
 /**
  * Descarta palo - descarta-palo-1.php
  *
- * @author Escriba aquí su nombre
+ * @author Florindo López Delgado
  */
 ?>
 <!DOCTYPE html>
@@ -10,9 +10,9 @@
 <head>
   <meta charset="utf-8">
   <title>
-    Descarta palo d(Formulario).
+    Descarta palo (Formulario).
     Con formularios.
-    Escriba aquí su nombre
+    Florindo López Delgado
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" title="Color">
@@ -35,7 +35,7 @@
           <td>
             <select name="palo">
               <option value="">...</option>
-              <option value="c">Corazones </option>
+              <option value="c">Corazones</option>
               <option value="d">Rombos</option>
               <option value="p">Picas</option>
               <option value="t">Tréboles</option>
@@ -46,13 +46,13 @@
     </table>
 
     <p>
-      <input type="submit" value="Mostrar">
-      <input type="reset" value="Borrar">
+      <input type="submit" name="mostrar" value="Mostrar">
+      <input type="reset" name="reset" value="Borrar">
     </p>
   </form>
 
   <footer>
-    <p>Escriba aquí su nombre</p>
+    <p>Florindo López Delgado</p>
   </footer>
 </body>
 </html>

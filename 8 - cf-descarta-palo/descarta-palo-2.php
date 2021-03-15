@@ -75,7 +75,7 @@ if(isset($_POST['mostrar']) && count($errores) == 0){
   <h2>Resultado</h2>
   <?php if(count($descartes) > 0){
   ?>
-    <p>Hay <?php echo count($descartes); ?> cartas que no son
+    <p>Hay <?php echo count($descartes); ?> cartas que no son 
     <?php
         echo $palosNombres[$palo];
     ?>.</p>
@@ -104,4 +104,3 @@ if(isset($_POST['mostrar']) && count($errores) == 0){
   </footer>
 </body>
 </html>
-
